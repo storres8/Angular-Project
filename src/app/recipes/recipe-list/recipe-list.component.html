@@ -6,24 +6,9 @@
 <hr />
 <div class="row">
   <div class="col-12">
-    <a href="#">
-      <div class="card clearfix mb-2" *ngFor="let recipe of recipes">
-        <div class="card-body p-2">
-          <div class="float-left">
-            <h4 class="card-title mb-1 text-dark">{{ recipe.name }}</h4>
-            <p class="card-text text-dark">{{ recipe.description }}</p>
-          </div>
-          <span class="float-right">
-            <img
-              src="{{ recipe.imagePath }}"
-              alt="{{ recipe.name }}"
-              class="img-fluid"
-              style="max-height: 60px;"
-            />
-          </span>
-        </div>
-      </div>
-    </a>
-    <app-recipe-item></app-recipe-item>
+    <app-recipe-item
+      *ngFor="let recipeElement of recipes"
+      [recipe]="recipeElement"
+    ></app-recipe-item>
   </div>
 </div>
